@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MKC Mobile Key Cutting</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      text-align: center;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    header {
+      padding: 2rem 1rem;
+    }
+    header img {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    main {
+      padding: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    section p,
+    section li {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    /* Contact form */
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+    }
+    label {
+      font-weight: bold;
+      text-align: left;
+    }
+    input,
+    textarea {
+      padding: 0.5rem;
+      border: 1px solid #444;
+      border-radius: 4px;
+      background-color: #111;
+      color: #fff;
+      font-size: 1rem;
+    }
+    input::placeholder,
+    textarea::placeholder {
+      color: #888;
+    }
+    button {
+      padding: 0.75rem;
+      background-color: #444;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #666;
+    }
+    footer {
+      padding: 1rem;
+      font-size: 0.875rem;
+      opacity: 0.7;
+    }
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.75rem;
+      }
+      section h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Image file should be named exactly "MKC.PNG" -->
+    <img src="MKC.PNG" alt="MKC Mobile Key Cutting Logo" />
+    <h1>MKC Mobile Key Cutting</h1>
+    <p>Residential &amp; Commercial Key Cutting • We Come to You</p>
+  </header>
+
+  <main>
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>Our Service</h2>
+      <p>We specialize in:</p>
+      <ul>
+        <li>Residential key cutting (houses)</li>
+        <li>Commercial key cutting (businesses)</li>
+      </ul>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About MKC</h2>
+      <p>
+        At MKC Mobile Key Cutting, we drive straight to your home or business
+        to cut brand-new keys on-site. No shop visits or hardware-store visits
+        needed—save time and hassle by letting us come to you.
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Get in Touch</h2>
+      <p>Fill out the form below and we’ll email you back within 24 hours.</p>
+
+      <form action="https://formspree.io/f/xqabzrgd" method="POST">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          required
+        />
+
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="_replyto"
+          placeholder="you@example.com"
+          required
+        />
+
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="555-123-4567"
+          required
+        />
+
+        <label for="address">Service Address</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          placeholder="123 Main St, City, BC"
+          required
+        />
+
+        <label for="message">Details / Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder="Any additional info"
+        ></textarea>
+
+        <button type="submit">Send Request</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 MKC Mobile Key Cutting. All Rights Reserved.
+  </footer>
+</body>
+</html>
