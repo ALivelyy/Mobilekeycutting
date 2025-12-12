@@ -16,19 +16,15 @@
       text-align: center;
     }
 
-    header {
-      padding: 2rem 1rem;
-    }
+    header { padding: 2rem 1rem; }
 
     header img {
       max-width: 150px;
       margin-bottom: 1rem;
+      height: auto;
     }
 
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
+    header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
 
     main {
       max-width: 600px;
@@ -36,24 +32,15 @@
       padding: 1rem;
     }
 
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
+    h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
 
-    p, li {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
+    h3 { font-size: 1.25rem; margin: 1.25rem 0 0.6rem; }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+    p, li { font-size: 1rem; margin-bottom: 0.5rem; }
 
-    /* =====================
-       FORM
-       ===================== */
+    ul { list-style: none; padding: 0; }
+
+    /* FORM */
     form {
       display: flex;
       flex-direction: column;
@@ -61,10 +48,7 @@
       margin-top: 1rem;
     }
 
-    label {
-      font-weight: bold;
-      text-align: left;
-    }
+    label { font-weight: bold; text-align: left; }
 
     input, textarea {
       padding: 0.5rem;
@@ -86,9 +70,7 @@
 
     button:hover { background: #666; }
 
-    /* =====================
-       RIGHT-SIDE TABS
-       ===================== */
+    /* RIGHT-SIDE TABS */
     .side-tabs {
       position: fixed;
       top: 50%;
@@ -108,7 +90,7 @@
       border-radius: 10px;
       cursor: pointer;
       font-size: 14px;
-      min-width: 140px;
+      min-width: 150px;
       text-align: left;
     }
 
@@ -117,11 +99,24 @@
       border-color: #888;
     }
 
-    /* =====================
-       PANELS (instant)
-       ===================== */
+    /* PANELS (instant) */
     .tab-panel { display: none; }
     .tab-panel.is-active { display: block; }
+
+    /* PRICING blocks */
+    .price-block {
+      background: #0b0b0b;
+      border: 1px solid #222;
+      border-radius: 10px;
+      padding: 14px;
+      text-align: left;
+      margin-top: 0.75rem;
+    }
+
+    .price-block h3 { margin-top: 0; }
+
+    .price-list { margin-top: 0.5rem; }
+    .price-list li { margin-bottom: 0.35rem; }
 
     footer {
       padding: 2rem 1rem;
@@ -136,14 +131,15 @@
   <header>
     <img src="MKC.PNG" alt="MKC Mobile Key Cutting Logo" />
     <h1>MKC Mobile Key Cutting</h1>
-    <p>Residential & Commercial Key Cutting<br>We Come to You</p>
+    <p>Residential &amp; Commercial Key Cutting</p>
   </header>
 
   <!-- RIGHT-SIDE TABS -->
-  <nav class="side-tabs">
-    <button class="tab is-active" data-target="contact">Contact</button>
-    <button class="tab" data-target="about">About</button>
-    <button class="tab" data-target="subcontracting">Subcontracting</button>
+  <nav class="side-tabs" aria-label="Page tabs">
+    <button class="tab is-active" type="button" data-target="contact">Contact</button>
+    <button class="tab" type="button" data-target="about">About</button>
+    <button class="tab" type="button" data-target="subcontracting">Subcontracting</button>
+    <button class="tab" type="button" data-target="pricing">Pricing</button>
   </nav>
 
   <main>
@@ -155,20 +151,20 @@
       <p>We respond to emails within 24 hours.</p>
 
       <form action="https://formspree.io/f/xqabzrgd" method="POST">
-        <label>Name</label>
-        <input type="text" name="name" required />
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
 
-        <label>Email</label>
-        <input type="email" name="_replyto" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" required />
 
-        <label>Phone</label>
-        <input type="tel" name="phone" required />
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required />
 
-        <label>Service Address</label>
-        <input type="text" name="address" required />
+        <label for="address">Service Address</label>
+        <input type="text" id="address" name="address" required />
 
-        <label>Message</label>
-        <textarea name="message" rows="4"></textarea>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
 
         <button type="submit">Send Request</button>
       </form>
@@ -183,7 +179,12 @@
       </p>
       <p>
         We eliminate hardware store trips by bringing professional equipment
-        directly to your location.
+        directly to your location, and we test keys on-site.
+      </p>
+
+      <h3>Locksmithing</h3>
+      <p>
+        I’m a locksmith apprentice, and I can also offer hardware install, lockouts, and rekeying.
       </p>
     </section>
 
@@ -191,16 +192,51 @@
     <section id="subcontracting" class="tab-panel">
       <h2>Subcontracting</h2>
       <p>
-        MKC is available for subcontracting with locksmiths, property managers,
-        strata corporations, and security companies.
+        MKC is available for locksmith subcontracting. If it’s time sensitive and you’re going to miss a call,
+        or if you’re unavailable, injured, or away, give me a call.
       </p>
       <p>
-        Services include overflow key cutting, mobile support, and on-site
-        duplication for residential and commercial properties.
+        Absolute discretion for your business and anyone who uses my service.
       </p>
       <p>
-        Email us with details to discuss availability and rates.
+        Email for rates.
       </p>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="tab-panel">
+      <h2>Pricing</h2>
+
+      <div class="price-block">
+        <h3>Key Cutting</h3>
+        <ul class="price-list">
+          <li><strong>$5+</strong> per key</li>
+          <li><strong>$1.60</strong> per km</li>
+        </ul>
+      </div>
+
+      <div class="price-block">
+        <h3>Locksmithing</h3>
+        <ul class="price-list">
+          <li><strong>$100</strong> callout</li>
+          <li><strong>$35</strong> per hour after 1.5 hours</li>
+          <li>Hardware will vary</li>
+        </ul>
+      </div>
+
+      <div class="price-block">
+        <h3>Vehicle Lockout (Willoughby, Fort Langley, Walnut Grove)</h3>
+        <ul class="price-list">
+          <li><strong>$60</strong></li>
+        </ul>
+      </div>
+
+      <div class="price-block">
+        <h3>Single Hardware Install (Willoughby, Fort Langley, Walnut Grove)</h3>
+        <ul class="price-list">
+          <li><strong>$60</strong></li>
+        </ul>
+      </div>
     </section>
 
   </main>
@@ -224,7 +260,8 @@
         panels.forEach(p => p.classList.remove("is-active"));
 
         tab.classList.add("is-active");
-        document.getElementById(tab.dataset.target).classList.add("is-active");
+        const target = document.getElementById(tab.dataset.target);
+        if (target) target.classList.add("is-active");
       });
     });
   </script>
