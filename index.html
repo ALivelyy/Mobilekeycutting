@@ -33,12 +33,18 @@
     }
 
     h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
-
     h3 { font-size: 1.25rem; margin: 1.25rem 0 0.6rem; }
 
     p, li { font-size: 1rem; margin-bottom: 0.5rem; }
-
     ul { list-style: none; padding: 0; }
+
+    /* CONTACT PHONE HERO */
+    .phone-hero {
+      font-size: 1.85rem; /* almost as big as header h1 */
+      font-weight: 800;
+      margin: 0.25rem 0 0.75rem;
+      letter-spacing: 0.2px;
+    }
 
     /* FORM */
     form {
@@ -114,9 +120,14 @@
     }
 
     .price-block h3 { margin-top: 0; }
-
     .price-list { margin-top: 0.5rem; }
     .price-list li { margin-bottom: 0.35rem; }
+
+    .pricing-note {
+      margin-top: 0.6rem;
+      font-size: 0.92rem;
+      opacity: 0.9;
+    }
 
     footer {
       padding: 2rem 1rem;
@@ -138,8 +149,8 @@
   <nav class="side-tabs" aria-label="Page tabs">
     <button class="tab is-active" type="button" data-target="contact">Contact</button>
     <button class="tab" type="button" data-target="about">About</button>
-    <button class="tab" type="button" data-target="subcontracting">Subcontracting</button>
     <button class="tab" type="button" data-target="pricing">Pricing</button>
+    <button class="tab" type="button" data-target="subcontracting">Subcontracting</button>
   </nav>
 
   <main>
@@ -147,8 +158,8 @@
     <!-- CONTACT (MAIN PAGE) -->
     <section id="contact" class="tab-panel is-active">
       <h2>Contact</h2>
-      <p>Call or text: <strong>(778) 791-1224</strong></p>
-      <p>We respond to emails within 24 hours.</p>
+      <p class="phone-hero">(778) 791-1224</p>
+      <p>You can call or text, or use the form below. We respond to emails within 24 hours.</p>
 
       <form action="https://formspree.io/f/xqabzrgd" method="POST">
         <label for="name">Name</label>
@@ -184,22 +195,7 @@
 
       <h3>Locksmithing</h3>
       <p>
-        I’m a locksmith apprentice, and I can also offer hardware install, lockouts, and rekeying.
-      </p>
-    </section>
-
-    <!-- SUBCONTRACTING -->
-    <section id="subcontracting" class="tab-panel">
-      <h2>Subcontracting</h2>
-      <p>
-        MKC is available for locksmith subcontracting. If it’s time sensitive and you’re going to miss a call,
-        or if you’re unavailable, injured, or away, give me a call.
-      </p>
-      <p>
-        Absolute discretion for your business and anyone who uses my service.
-      </p>
-      <p>
-        Email for rates.
+        I’m a locksmith apprentice, and I can also provide hardware installation, lockouts, and rekeying.
       </p>
     </section>
 
@@ -229,6 +225,9 @@
         <ul class="price-list">
           <li><strong>$60</strong></li>
         </ul>
+        <p class="pricing-note">
+          You’re welcome to contact me outside business hours, but I may decline service.
+        </p>
       </div>
 
       <div class="price-block">
@@ -236,14 +235,32 @@
         <ul class="price-list">
           <li><strong>$60</strong></li>
         </ul>
+        <p class="pricing-note">
+          You’re welcome to contact me outside business hours, but I may decline service.
+        </p>
       </div>
+    </section>
+
+    <!-- SUBCONTRACTING -->
+    <section id="subcontracting" class="tab-panel">
+      <h2>Subcontracting</h2>
+      <p>
+        MKC is available for locksmith subcontracting. If a job is time-sensitive and you’re going to miss a call,
+        or if you’re unavailable, injured, or out of town, give me a call.
+      </p>
+      <p>
+        Absolute discretion for your business and for anyone who uses my service.
+      </p>
+      <p>
+        Email for rates.
+      </p>
     </section>
 
   </main>
 
   <footer>
     <p><strong>Hours (PST)</strong></p>
-    <p>Mon–Fri · 9:00am–6:00pm</p>
+    <p>Mon–Fri · 10:00am–6:00pm</p>
     <p>Sat · 10:00am–4:00pm · Sun · Closed</p>
     <br>
     <p>Langley, BC</p>
