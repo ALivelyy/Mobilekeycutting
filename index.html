@@ -4,207 +4,230 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MKC Mobile Key Cutting</title>
+
   <style>
-    /* Reset and base styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      background-color: #000;
+      background: #000;
       color: #fff;
       font-family: Arial, sans-serif;
       line-height: 1.5;
       text-align: center;
     }
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
+
     header {
       padding: 2rem 1rem;
     }
+
     header img {
       max-width: 150px;
-      height: auto;
       margin-bottom: 1rem;
     }
+
     header h1 {
       font-size: 2rem;
       margin-bottom: 0.5rem;
     }
+
     main {
-      padding: 1rem;
       max-width: 600px;
       margin: 0 auto;
+      padding: 1rem;
     }
-    section {
-      margin-bottom: 2rem;
-    }
-    section h2 {
+
+    h2 {
       font-size: 1.5rem;
       margin-bottom: 0.75rem;
     }
-    section p,
-    section li {
+
+    p, li {
       font-size: 1rem;
       margin-bottom: 0.5rem;
     }
+
     ul {
       list-style: none;
-      padding-left: 0;
+      padding: 0;
     }
-    /* Contact form */
+
+    /* =====================
+       FORM
+       ===================== */
     form {
       display: flex;
       flex-direction: column;
-      align-items: stretch;
       gap: 1rem;
+      margin-top: 1rem;
     }
+
     label {
       font-weight: bold;
       text-align: left;
     }
-    input,
-    textarea {
+
+    input, textarea {
       padding: 0.5rem;
+      background: #111;
       border: 1px solid #444;
       border-radius: 4px;
-      background-color: #111;
       color: #fff;
       font-size: 1rem;
     }
-    input::placeholder,
-    textarea::placeholder {
-      color: #888;
-    }
+
     button {
       padding: 0.75rem;
-      background-color: #444;
+      background: #444;
       border: none;
       border-radius: 4px;
       color: #fff;
-      font-size: 1rem;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #666;
+
+    button:hover { background: #666; }
+
+    /* =====================
+       RIGHT-SIDE TABS
+       ===================== */
+    .side-tabs {
+      position: fixed;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 9999;
     }
+
+    .tab {
+      background: #111;
+      border: 1px solid #444;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      min-width: 140px;
+      text-align: left;
+    }
+
+    .tab.is-active {
+      background: #444;
+      border-color: #888;
+    }
+
+    /* =====================
+       PANELS (instant)
+       ===================== */
+    .tab-panel { display: none; }
+    .tab-panel.is-active { display: block; }
+
     footer {
       padding: 2rem 1rem;
       font-size: 0.85rem;
       opacity: 0.9;
     }
-    footer p {
-      margin-bottom: 0.4rem;
-    }
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.75rem;
-      }
-      section h2 {
-        font-size: 1.25rem;
-      }
-    }
   </style>
 </head>
+
 <body>
+
   <header>
-    <!-- Image file should be named exactly "MKC.PNG" -->
     <img src="MKC.PNG" alt="MKC Mobile Key Cutting Logo" />
     <h1>MKC Mobile Key Cutting</h1>
-    <p>Residential &amp; Commercial Key Cutting<br>We Come to You</p>
+    <p>Residential & Commercial Key Cutting<br>We Come to You</p>
   </header>
 
+  <!-- RIGHT-SIDE TABS -->
+  <nav class="side-tabs">
+    <button class="tab is-active" data-target="contact">Contact</button>
+    <button class="tab" data-target="about">About</button>
+    <button class="tab" data-target="subcontracting">Subcontracting</button>
+  </nav>
+
   <main>
-    <!-- SERVICES -->
-    <section id="services">
-      <h2>Our Service</h2>
-      <p>We specialize in:</p>
-      <ul>
-        <li>Residential key cutting (houses)</li>
-        <li>Commercial key cutting (businesses)</li>
-      </ul>
-    </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>About MKC</h2>
-      <p>
-        At MKC Mobile Key Cutting, we drive straight to your home or business
-        to cut brand-new keys on-site. No shop visits or hardware-store visits
-        needed—save time and hassle by letting us come to you.
-      </p>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Get in Touch</h2>
+    <!-- CONTACT (MAIN PAGE) -->
+    <section id="contact" class="tab-panel is-active">
+      <h2>Contact</h2>
       <p>Call or text: <strong>(778) 791-1224</strong></p>
-      <p>Fill out the form below and we’ll email you back within 24&nbsp;hours.</p>
+      <p>We respond to emails within 24 hours.</p>
 
       <form action="https://formspree.io/f/xqabzrgd" method="POST">
-        <label for="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Your Name"
-          required
-        />
+        <label>Name</label>
+        <input type="text" name="name" required />
 
-        <label for="email">Email Address</label>
-        <input
-          type="email"
-          id="email"
-          name="_replyto"
-          placeholder="you@example.com"
-          required
-        />
+        <label>Email</label>
+        <input type="email" name="_replyto" required />
 
-        <label for="phone">Phone Number</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          placeholder="555-123-4567"
-          required
-        />
+        <label>Phone</label>
+        <input type="tel" name="phone" required />
 
-        <label for="address">Service Address</label>
-        <input
-          type="text"
-          id="address"
-          name="address"
-          placeholder="123 Main St, City, BC"
-          required
-        />
+        <label>Service Address</label>
+        <input type="text" name="address" required />
 
-        <label for="message">Details / Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          placeholder="Any additional info"
-        ></textarea>
+        <label>Message</label>
+        <textarea name="message" rows="4"></textarea>
 
         <button type="submit">Send Request</button>
       </form>
     </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="tab-panel">
+      <h2>About MKC</h2>
+      <p>
+        MKC Mobile Key Cutting provides on-site residential and commercial key
+        cutting throughout Langley and the Lower Mainland.
+      </p>
+      <p>
+        We eliminate hardware store trips by bringing professional equipment
+        directly to your location.
+      </p>
+    </section>
+
+    <!-- SUBCONTRACTING -->
+    <section id="subcontracting" class="tab-panel">
+      <h2>Subcontracting</h2>
+      <p>
+        MKC is available for subcontracting with locksmiths, property managers,
+        strata corporations, and security companies.
+      </p>
+      <p>
+        Services include overflow key cutting, mobile support, and on-site
+        duplication for residential and commercial properties.
+      </p>
+      <p>
+        Email us with details to discuss availability and rates.
+      </p>
+    </section>
+
   </main>
 
   <footer>
     <p><strong>Hours (PST)</strong></p>
-    <p>Mon&nbsp;–&nbsp;Fri&nbsp;·&nbsp;9:00 am&nbsp;–&nbsp;6:00 pm</p>
-    <p>Sat&nbsp;·&nbsp;10:00 am&nbsp;–&nbsp;4:00 pm&nbsp;&nbsp;|&nbsp;&nbsp;Sun&nbsp;·&nbsp;Closed</p>
+    <p>Mon–Fri · 9:00am–6:00pm</p>
+    <p>Sat · 10:00am–4:00pm · Sun · Closed</p>
     <br>
-    <p>20727&nbsp;Willoughby&nbsp;Town&nbsp;Centre<br>C200<br>Langley, BC&nbsp;V2Y 1X1</p>
-    <br>
-    <p>&copy; 2025 MKC Mobile Key Cutting. All Rights Reserved.</p>
+    <p>Langley, BC</p>
+    <p>&copy; 2025 MKC Mobile Key Cutting</p>
   </footer>
+
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".tab-panel");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("is-active"));
+        panels.forEach(p => p.classList.remove("is-active"));
+
+        tab.classList.add("is-active");
+        document.getElementById(tab.dataset.target).classList.add("is-active");
+      });
+    });
+  </script>
+
 </body>
 </html>
