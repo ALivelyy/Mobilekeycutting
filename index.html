@@ -38,15 +38,18 @@
     p, li { font-size: 1rem; margin-bottom: 0.5rem; }
     ul { list-style: none; padding: 0; }
 
-    /* CONTACT PHONE HERO */
     .phone-hero {
-      font-size: 1.85rem; /* almost as big as header h1 */
+      font-size: 1.85rem;
       font-weight: 800;
-      margin: 0.25rem 0 0.75rem;
-      letter-spacing: 0.2px;
+      margin: 0.25rem 0 0.5rem;
     }
 
-    /* FORM */
+    .availability-note {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
     form {
       display: flex;
       flex-direction: column;
@@ -76,7 +79,6 @@
 
     button:hover { background: #666; }
 
-    /* RIGHT-SIDE TABS */
     .side-tabs {
       position: fixed;
       top: 50%;
@@ -105,11 +107,9 @@
       border-color: #888;
     }
 
-    /* PANELS (instant) */
     .tab-panel { display: none; }
     .tab-panel.is-active { display: block; }
 
-    /* PRICING blocks */
     .price-block {
       background: #0b0b0b;
       border: 1px solid #222;
@@ -117,16 +117,6 @@
       padding: 14px;
       text-align: left;
       margin-top: 0.75rem;
-    }
-
-    .price-block h3 { margin-top: 0; }
-    .price-list { margin-top: 0.5rem; }
-    .price-list li { margin-bottom: 0.35rem; }
-
-    .pricing-note {
-      margin-top: 0.6rem;
-      font-size: 0.92rem;
-      opacity: 0.9;
     }
 
     footer {
@@ -139,149 +129,124 @@
 
 <body>
 
-  <header>
-    <img src="MKC.PNG" alt="MKC Mobile Key Cutting Logo" />
-    <h1>MKC Mobile Key Cutting</h1>
-    <p>Residential &amp; Commercial Key Cutting</p>
-  </header>
+<header>
+  <img src="MKC.PNG" alt="MKC Mobile Key Cutting Logo" />
+  <h1>MKC Mobile Key Cutting</h1>
+  <p>Residential &amp; Commercial Key Cutting</p>
+</header>
 
-  <!-- RIGHT-SIDE TABS -->
-  <nav class="side-tabs" aria-label="Page tabs">
-    <button class="tab is-active" type="button" data-target="contact">Contact</button>
-    <button class="tab" type="button" data-target="about">About</button>
-    <button class="tab" type="button" data-target="pricing">Pricing</button>
-    <button class="tab" type="button" data-target="subcontracting">Subcontracting</button>
-  </nav>
+<nav class="side-tabs">
+  <button class="tab is-active" data-target="contact">Contact</button>
+  <button class="tab" data-target="about">About</button>
+  <button class="tab" data-target="pricing">Pricing</button>
+  <button class="tab" data-target="subcontracting">Subcontracting</button>
+</nav>
 
-  <main>
+<main>
 
-    <!-- CONTACT (MAIN PAGE) -->
-    <section id="contact" class="tab-panel is-active">
-      <h2>Contact</h2>
-      <p class="phone-hero">(778) 791-1224</p>
-      <p>You can call or text, or use the form below. We respond to emails within 24 hours.</p>
+<section id="contact" class="tab-panel is-active">
+  <h2>Contact</h2>
+  <p class="phone-hero">(778) 791-1224</p>
+  <p class="availability-note">
+    Availability is subject to scheduling and current workload.
+  </p>
 
-      <form action="https://formspree.io/f/xqabzrgd" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
+  <form action="https://formspree.io/f/xqabzrgd" method="POST">
+    <label>Name</label>
+    <input type="text" name="name" required />
+    <label>Email</label>
+    <input type="email" name="_replyto" required />
+    <label>Phone</label>
+    <input type="tel" name="phone" required />
+    <label>Service Address</label>
+    <input type="text" name="address" required />
+    <label>Message</label>
+    <textarea name="message" rows="4"></textarea>
+    <button type="submit">Send Request</button>
+  </form>
+</section>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="_replyto" required />
+<section id="about" class="tab-panel">
+  <h2>About MKC</h2>
+  <p>
+    MKC Mobile Key Cutting provides on-site residential and commercial key
+    cutting throughout Langley and the Lower Mainland.
+  </p>
+  <p>
+    We eliminate hardware store trips by bringing professional equipment
+    directly to your location, and we test keys on-site.
+  </p>
 
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" name="phone" required />
+  <h3>Locksmithing</h3>
+  <p>
+    I’m a locksmith apprentice and provide hardware installation, lockouts,
+    and rekeying services.
+  </p>
+</section>
 
-        <label for="address">Service Address</label>
-        <input type="text" id="address" name="address" required />
+<section id="pricing" class="tab-panel">
+  <h2>Pricing</h2>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4"></textarea>
+  <div class="price-block">
+    <h3>Key Cutting</h3>
+    <p>$5+ per key<br>$1.60 per km</p>
+  </div>
 
-        <button type="submit">Send Request</button>
-      </form>
-    </section>
+  <div class="price-block">
+    <h3>Locksmithing</h3>
+    <p>$100 callout<br>$35/hr after 1.5 hours<br>Hardware varies</p>
+  </div>
 
-    <!-- ABOUT -->
-    <section id="about" class="tab-panel">
-      <h2>About MKC</h2>
-      <p>
-        MKC Mobile Key Cutting provides on-site residential and commercial key
-        cutting throughout Langley and the Lower Mainland.
-      </p>
-      <p>
-        We eliminate hardware store trips by bringing professional equipment
-        directly to your location, and we test keys on-site.
-      </p>
+  <div class="price-block">
+    <h3>Vehicle Lockout (Willoughby, Fort Langley, Walnut Grove)</h3>
+    <p>$60<br><em>After-hours requests accepted when possible.</em></p>
+  </div>
 
-      <h3>Locksmithing</h3>
-      <p>
-        I’m a locksmith apprentice, and I can also provide hardware installation, lockouts, and rekeying.
-      </p>
-    </section>
+  <div class="price-block">
+    <h3>Single Hardware Install (Willoughby, Fort Langley, Walnut Grove)</h3>
+    <p>$60<br><em>After-hours requests accepted when possible.</em></p>
+  </div>
+</section>
 
-    <!-- PRICING -->
-    <section id="pricing" class="tab-panel">
-      <h2>Pricing</h2>
+<section id="subcontracting" class="tab-panel">
+  <h2>Subcontracting</h2>
+  <p>
+    MKC is available for locksmith subcontracting support. If a job is
+    time-sensitive and you’re going to miss a call, or you’re unavailable,
+    injured, or out of town, reach out.
+  </p>
+  <p>
+    Availability depends on existing jobs and current commitments.
+  </p>
+  <p>
+    Absolute discretion for your business and anyone using my service.
+    Email for rates.
+  </p>
+</section>
 
-      <div class="price-block">
-        <h3>Key Cutting</h3>
-        <ul class="price-list">
-          <li><strong>$5+</strong> per key</li>
-          <li><strong>$1.60</strong> per km</li>
-        </ul>
-      </div>
+</main>
 
-      <div class="price-block">
-        <h3>Locksmithing</h3>
-        <ul class="price-list">
-          <li><strong>$100</strong> callout</li>
-          <li><strong>$35</strong> per hour after 1.5 hours</li>
-          <li>Hardware will vary</li>
-        </ul>
-      </div>
+<footer>
+  <p><strong>Hours (PST)</strong></p>
+  <p>Mon–Fri · 10:00am–6:00pm</p>
+  <p>Sat · 10:00am–4:00pm · Sun · Closed</p>
+  <p>Langley, BC</p>
+  <p>&copy; 2025 MKC Mobile Key Cutting</p>
+</footer>
 
-      <div class="price-block">
-        <h3>Vehicle Lockout (Willoughby, Fort Langley, Walnut Grove)</h3>
-        <ul class="price-list">
-          <li><strong>$60</strong></li>
-        </ul>
-        <p class="pricing-note">
-          You’re welcome to contact me outside business hours, but I may decline service.
-        </p>
-      </div>
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const panels = document.querySelectorAll(".tab-panel");
 
-      <div class="price-block">
-        <h3>Single Hardware Install (Willoughby, Fort Langley, Walnut Grove)</h3>
-        <ul class="price-list">
-          <li><strong>$60</strong></li>
-        </ul>
-        <p class="pricing-note">
-          You’re welcome to contact me outside business hours, but I may decline service.
-        </p>
-      </div>
-    </section>
-
-    <!-- SUBCONTRACTING -->
-    <section id="subcontracting" class="tab-panel">
-      <h2>Subcontracting</h2>
-      <p>
-        MKC is available for locksmith subcontracting. If a job is time-sensitive and you’re going to miss a call,
-        or if you’re unavailable, injured, or out of town, give me a call.
-      </p>
-      <p>
-        Absolute discretion for your business and for anyone who uses my service.
-      </p>
-      <p>
-        Email for rates.
-      </p>
-    </section>
-
-  </main>
-
-  <footer>
-    <p><strong>Hours (PST)</strong></p>
-    <p>Mon–Fri · 10:00am–6:00pm</p>
-    <p>Sat · 10:00am–4:00pm · Sun · Closed</p>
-    <br>
-    <p>Langley, BC</p>
-    <p>&copy; 2025 MKC Mobile Key Cutting</p>
-  </footer>
-
-  <script>
-    const tabs = document.querySelectorAll(".tab");
-    const panels = document.querySelectorAll(".tab-panel");
-
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        tabs.forEach(t => t.classList.remove("is-active"));
-        panels.forEach(p => p.classList.remove("is-active"));
-
-        tab.classList.add("is-active");
-        const target = document.getElementById(tab.dataset.target);
-        if (target) target.classList.add("is-active");
-      });
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("is-active"));
+      panels.forEach(p => p.classList.remove("is-active"));
+      tab.classList.add("is-active");
+      document.getElementById(tab.dataset.target).classList.add("is-active");
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
