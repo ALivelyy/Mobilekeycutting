@@ -150,7 +150,26 @@
     @media (max-width: 480px) {
       .badges img { height: 56px; }
     }
+/* Mobile-only header layout */
+@media (max-width: 480px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 12px;
+  }
 
+  header img {
+    margin-bottom: 0;
+    max-width: 90px;
+  }
+
+  header h1,
+  header p {
+    margin: 0;
+  }
+}
     .is-hidden { display: none !important; }
   </style>
 </head>
