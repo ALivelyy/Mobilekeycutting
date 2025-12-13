@@ -35,8 +35,7 @@
     h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
     h3 { font-size: 1.25rem; margin: 1.25rem 0 0.6rem; }
 
-    p, li { font-size: 1rem; margin-bottom: 0.5rem; }
-    ul { list-style: none; padding: 0; }
+    p { font-size: 1rem; margin-bottom: 0.5rem; }
 
     .phone-hero {
       font-size: 1.85rem;
@@ -79,15 +78,15 @@
 
     button:hover { background: #666; }
 
-   .side-tabs {
-  position: fixed;
-  top: 1%;
-  right: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 9999;
-}
+    .side-tabs {
+      position: fixed;
+      top: 1%;
+      right: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 9999;
+    }
 
     .tab {
       background: #111;
@@ -129,30 +128,30 @@
       font-size: 0.85rem;
       opacity: 0.9;
     }
-    /* Prevent sideways scrolling on mobile */
-html, body { overflow-x: hidden; }
 
-/* Badge row: wrap on small screens */
-.badges {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 0 12px;
-}
+    html, body { overflow-x: hidden; }
 
-/* Make badge images scale nicely */
-.badges img {
-  height: 70px;
-  width: auto;
-  max-width: 90vw;
-}
+    .badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 0 12px;
+      margin: 1.5rem auto 2rem;
+    }
 
-/* Mobile tuning */
-@media (max-width: 480px) {
-  .badges img { height: 56px; }
-}
+    .badges img {
+      height: 70px;
+      width: auto;
+      max-width: 90vw;
+    }
+
+    @media (max-width: 480px) {
+      .badges img { height: 56px; }
+    }
+
+    .is-hidden { display: none !important; }
   </style>
 </head>
 
@@ -163,42 +162,23 @@ html, body { overflow-x: hidden; }
   <h1>MKC Mobile Key Cutting</h1>
   <p>Residential &amp; Commercial Key Cutting</p>
 </header>
-<div class="badges">
 
-  <!-- Greater Langley Chamber -->
-  <a href="https://www.langleychamber.com"
-     target="_blank"
-     rel="noopener noreferrer"
-     style="display:flex; align-items:center;">
-    <img
-      src="CHAMBER.png"
-      alt="Member – Greater Langley Chamber of Commerce"
-      style="height:80px; width:auto;">
+<!-- Trust badges (Contact tab only) -->
+<div class="badges" id="trust-badges">
+  <a href="https://www.langleychamber.com" target="_blank" rel="noopener noreferrer">
+    <img src="CHAMBER.png" alt="Member – Greater Langley Chamber of Commerce">
   </a>
 
-  <!-- CANASA -->
-  <a href="https://www.canasa.org"
-     target="_blank"
-     rel="noopener noreferrer"
-     style="display:flex; align-items:center;">
-    <img
-      src="CANASALogo.svg"
-      alt="CANASA Member"
-      style="height:80px; width:auto;">
+  <a href="https://www.canasa.org" target="_blank" rel="noopener noreferrer">
+    <img src="CANASALogo.svg" alt="CANASA Member">
   </a>
 
-  <!-- BBB -->
   <a href="https://www.bbb.org/ca/bc/langley/profile/locksmith/mkc-mobile-key-cutting-0037-2437389"
-     target="_blank"
-     rel="noopener noreferrer"
-     style="display:flex; align-items:center;">
-    <img
-      src="BBB.jpg"
-      alt="BBB Accredited Business"
-      style="height:80px; width:auto;">
+     target="_blank" rel="noopener noreferrer">
+    <img src="BBB.jpg" alt="BBB Accredited Business">
   </a>
-
 </div>
+
 <nav class="side-tabs">
   <button class="tab is-active" data-target="contact">Contact</button>
   <button class="tab" data-target="about">About</button>
@@ -211,19 +191,17 @@ html, body { overflow-x: hidden; }
 <section id="contact" class="tab-panel is-active">
   <h2>Contact</h2>
   <p class="phone-hero">(778) 791-1224</p>
-  <p class="availability-note">
-    Availability is subject to scheduling and current workload.
-  </p>
+  <p class="availability-note">Availability is subject to scheduling and current workload.</p>
 
   <form action="https://formspree.io/f/xqabzrgd" method="POST">
     <label>Name</label>
-    <input type="text" name="name" required />
+    <input type="text" name="name" required>
     <label>Email</label>
-    <input type="email" name="_replyto" required />
+    <input type="email" name="_replyto" required>
     <label>Phone</label>
-    <input type="tel" name="phone" required />
+    <input type="tel" name="phone" required>
     <label>Service Address</label>
-    <input type="text" name="address" required />
+    <input type="text" name="address" required>
     <label>Message</label>
     <textarea name="message" rows="4"></textarea>
     <button type="submit">Send Request</button>
@@ -231,31 +209,12 @@ html, body { overflow-x: hidden; }
 </section>
 
 <section id="about" class="tab-panel">
-  <img
-  src="STAIRS2.jpg"
-  alt="Stairwell and door hardware detail"
-  style="width:100%; max-width:600px; height:auto; margin:1rem 0; border-radius:8px;"
->
   <h2>About MKC</h2>
-  <p>
-    MKC Mobile Key Cutting provides on-site residential and commercial key
-    cutting throughout Langley and the Lower Mainland.
-  </p>
-  <p>
-    We eliminate hardware store trips by bringing professional equipment
-    directly to your location, and we test keys on-site.
-  </p>
+  <p>MKC Mobile Key Cutting provides on-site residential and commercial key cutting throughout Langley and the Lower Mainland.</p>
+  <p>We eliminate hardware store trips by bringing professional equipment directly to your location, and we test keys on-site.</p>
 
   <h3>Locksmithing</h3>
-  <p>
-    I’m a locksmith apprentice and provide hardware installation, lockouts,
-    and rekeying services.
-  </p>
-  <img
-  src="DOOR2.jpg"
-  alt="Door and hardware detail"
-  style="width:100%; max-width:600px; height:auto; margin-bottom:1rem; border-radius:8px;"
->
+  <p>I’m a locksmith apprentice and provide hardware installation, lockouts, and rekeying services.</p>
 </section>
 
 <section id="pricing" class="tab-panel">
@@ -268,52 +227,33 @@ html, body { overflow-x: hidden; }
 
   <div class="price-block">
     <h3>Locksmithing</h3>
-    <p>
-      $100 callout<br>
-      $35/hr after 1.5 hours<br>
-      Hardware varies
-    </p>
-    <p class="pricing-note">
-      After-hours requests welcome but may be declined.
-    </p>
+    <p>$100 callout<br>$35/hr after 1.5 hours<br>Hardware varies</p>
+    <p class="pricing-note">After-hours requests welcome but may be declined.</p>
   </div>
 
   <div class="price-block">
     <h3>Vehicle Lockout (Willoughby, Fort Langley, Walnut Grove)</h3>
     <p>$60</p>
-    <p class="pricing-note">
-      After-hours requests welcome but may be declined.
-    </p>
+    <p class="pricing-note">After-hours requests welcome but may be declined.</p>
   </div>
 
   <div class="price-block">
-    <h3>Single Residential Door Hardware Installation (Within Reason) (Willoughby, Fort Langley, Walnut Grove)</h3>
+    <h3>Single Residential Door Hardware Installation (Within Reason)</h3>
     <p>$60</p>
-    <p class="pricing-note">
-      After-hours requests welcome but may be declined.
-    </p>
+    <p class="pricing-note">After-hours requests welcome but may be declined.</p>
   </div>
+
   <p style="margin-top:1.25rem; font-size:0.9rem; opacity:0.85;">
-  Prices listed are estimates only and are subject to change without notice.
-</p>
+    Prices listed are estimates only and are subject to change without notice.
+  </p>
 </section>
 
 <section id="subcontracting" class="tab-panel">
   <h2>Subcontracting</h2>
-  <p>
-    MKC is available for locksmith subcontracting support. If a job is
-    time-sensitive and you’re going to miss a call, or you’re unavailable,
-    injured, or out of town, reach out.
-  </p>
-  <p>
-    Availability depends on existing jobs and current commitments.
-  </p>
-<p>
-  Absolute discretion for your business and anyone using my service.
-</p>
-<p>
-  Email for rates.
-</p>
+  <p>MKC is available for locksmith subcontracting support when you’re unavailable, injured, or away.</p>
+  <p>Availability depends on existing jobs and current commitments.</p>
+  <p>Absolute discretion for your business and your clients.</p>
+  <p>Email for rates.</p>
 </section>
 
 </main>
@@ -329,24 +269,24 @@ html, body { overflow-x: hidden; }
 <script>
   const tabs = document.querySelectorAll(".tab");
   const panels = document.querySelectorAll(".tab-panel");
+  const badges = document.getElementById("trust-badges");
+
+  function setBadgesVisibility(activeId) {
+    badges.classList.toggle("is-hidden", activeId !== "contact");
+  }
+
+  setBadgesVisibility("contact");
 
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
-      // deactivate all tabs
       tabs.forEach(t => t.classList.remove("is-active"));
-
-      // hide all panels
       panels.forEach(p => p.classList.remove("is-active"));
 
-      // activate clicked tab
       tab.classList.add("is-active");
+      const activeId = tab.dataset.target;
+      document.getElementById(activeId).classList.add("is-active");
 
-      // show matching panel
-      document
-        .getElementById(tab.dataset.target)
-        .classList.add("is-active");
-
-      // jump back to top
+      setBadgesVisibility(activeId);
       window.scrollTo(0, 0);
     });
   });
