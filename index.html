@@ -150,24 +150,13 @@
     @media (max-width: 480px) {
       .badges img { height: 56px; }
     }
-/* Mobile-only header layout */
+/* Mobile-only: move ONLY the logo */
 @media (max-width: 480px) {
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
-    gap: 12px;
-  }
-
   header img {
-    margin-bottom: 0;
-    max-width: 90px;
-  }
-
-  header h1,
-  header p {
-    margin: 0;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+    margin-bottom: 0.75rem;
   }
 }
     .is-hidden { display: none !important; }
