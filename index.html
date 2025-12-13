@@ -129,6 +129,30 @@
       font-size: 0.85rem;
       opacity: 0.9;
     }
+    /* Prevent sideways scrolling on mobile */
+html, body { overflow-x: hidden; }
+
+/* Badge row: wrap on small screens */
+.badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 12px;
+}
+
+/* Make badge images scale nicely */
+.badges img {
+  height: 70px;
+  width: auto;
+  max-width: 90vw;
+}
+
+/* Mobile tuning */
+@media (max-width: 480px) {
+  .badges img { height: 56px; }
+}
   </style>
 </head>
 
@@ -139,7 +163,7 @@
   <h1>MKC Mobile Key Cutting</h1>
   <p>Residential &amp; Commercial Key Cutting</p>
 </header>
-<div style="margin: 1.5rem auto 2rem; display:flex; justify-content:center; align-items:center; gap:20px;">
+<div class="badges">
 
   <!-- Greater Langley Chamber -->
   <a href="https://www.langleychamber.com"
